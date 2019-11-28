@@ -6,47 +6,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+      body{
+        display:flex;
+        flex-flow: column nowrap;
+        align-items:center;
+        align-content:center;
+      }
+      header{
+        display:flex;
+        flex-flow:row nowrap;
+        align-content:center;
+        justify-content:center;
+        align-items:center;
+        height:10%;
+        background-color:rgb(31, 31, 31);
+        color:white;
+        width:100%;
+      }
       #map {
+        flex:1 1 auto;
         float:left;
-        height: 100%;
-        width: 60%;
+        width:100%;
         border: 5px solid black;
       }
-      /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
       #distancia{
-        background-color: #f1f2f6;
-        background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        display:table;
-        float:left;
-        text-align:left;
-        height:70px;
-        width: 300px;
-        /*border: 2px solid black;*/
-        border-radius:5%;
-        padding-left:20px;
-        padding-right:20px;
-      }
-      #textoDistancia{
-        display:table-cell;
-        vertical-align:middle;
+        background-color: rgb(31, 31, 31);
+        color:white;
+        font-weight:bold;
+        display:flex;
+        flex-flow:column nowrap;
+        justify-content:center;
+        align-items:center;
+        width:100%;
       }
     </style>
   </head>
   <body>
+    <header>
+      <h2>ISS Real Time Location Map</h2>
+    </header>
     <div id="map"></div>
     <br>
     <div id="distancia">
-      <div id="textoDistancia">Distancia recorrida:</div>
+      <p>Distancia recorrida:</p>
+      <div id="textoDistancia"></div>
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiGjxj-rure4ormHRVZFphhDpOTlsb_nk&callback=initMap"
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEWsVJgJfHIaZ6NBcr8BWqFi-CMVq3fvE&callback=initMap"
         async defer></script>
     <script>
         var map;
@@ -117,7 +128,7 @@
                 });
                 let distancia = getDistancia(latitudAnterior,longitudAnterior,marker.position.lat(),marker.position.lng());
                 distanciaRecorrida += distancia;
-                document.getElementById("textoDistancia").innerHTML = "Distancia recorrida: "+distanciaRecorrida+ " Km";
+                document.getElementById("textoDistancia").innerHTML = distanciaRecorrida+ " Km";
             }            
         }
         function error(error){
