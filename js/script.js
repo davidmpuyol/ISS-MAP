@@ -19,7 +19,6 @@ var map;
         }
         function moveISS() {
             $.getJSON('https://api.wheretheiss.at/v1/satellites/25544', function(data) {
-                console.log(data);
                 var lat = data.latitude;
                 var lon = data.longitude;
                 actualizarPosicion(parseFloat(lat),parseFloat(lon));
