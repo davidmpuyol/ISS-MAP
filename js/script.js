@@ -18,11 +18,10 @@ var map;
           return deg * (Math.PI/180)
         }
         function moveISS() {
-            $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
+            $.getJSON('https://api.wheretheiss.at/v1/satellites/25544', function(data) {
                 console.log(data);
-                var lat = data['iss_position']['latitude'];
-                var lon = data['iss_position']['longitude'];
-                console.log(lat+" "+lon);
+                var lat = data.latitude;
+                var lon = data.longitude;
                 actualizarPosicion(parseFloat(lat),parseFloat(lon));
             });
             setTimeout(moveISS, 1000);
