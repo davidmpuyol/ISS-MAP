@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
+    <header>
+      <h2>ISS Real Time Location Map</h2>
+    </header>
+    <div id="map"></div>
+    <br>
+    <div id="distancia">
+      <p>Distancia recorrida:</p>
+      <div id="textoDistancia"></div>
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEWsVJgJfHIaZ6NBcr8BWqFi-CMVq3fvE&callback=initMap"
+        async defer></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

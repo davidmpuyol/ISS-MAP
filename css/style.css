@@ -1,0 +1,38 @@
+body{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items:center;
+    align-content:center;
+  }
+  header{
+    display:flex;
+    flex-flow:row nowrap;
+    align-content:center;
+    justify-content:center;
+    align-items:center;
+    height:10%;
+    background-color:rgb(31, 31, 31);
+    color:white;
+    width:100%;
+  }
+  #map {
+    flex:1 1 auto;
+    float:left;
+    width:100%;
+    border: 5px solid black;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #distancia{
+    background-color: rgb(31, 31, 31);
+    color:white;
+    font-weight:bold;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+  }
